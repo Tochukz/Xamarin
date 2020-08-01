@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FormsExample.ContentPageExample" 
+             BackgroundColor="CornflowerBlue">
+    <ContentPage.Padding>10, 0, 10, 15</ContentPage.Padding>
+    <!-- Does not work-->
+    <!--
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">10, 20, 10 5</On>
+            <On Platform="Andriod">10, 0, 10, 5</On> 
+        </OnPlatform>
+    </ContentPage.Padding>
+    -->
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout HeightRequest="1500">
+                <Label Text="Label" FontSize="40" HorizontalOptions="Center" />
+                <Label FontSize="20" HorizontalOptions="CenterAndExpand">
+                    <Label.Text>
+                        This control is great 
+                        displaying one or more
+                        lines of text.
+                    </Label.Text>
+                </Label>
+                <Label Text="Testing textin Label View" FontSize="16" HorizontalTextAlignment="End" TextColor="Brown"/>
+                <Label Text="Testing FontFamily With Label" FontFamily="Courier"  FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Another line of Text" FontAttributes="Italic" />
+                <Label>
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS">Courier</On>
+                            <On Platform="Andriod">Droid Sans Mono</On>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Button Text="Click Me" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Fill"  Clicked="ButtonClicked" />
+                <Button Text="Like So" FontSize="Small" BorderColor="Blue" BorderWidth="2" TextColor="Coral" />
+                <Button Text="Start And Expand" HorizontalOptions="StartAndExpand" />
+                <Button Text="Fill Btn" HorizontalOptions="FillAndExpand" />
+                <Entry Placeholder="Username" VerticalOptions="Center" Keyboard="Text" />
+                <Entry Placeholder="Passwrod" Keyboard="Text" IsPassword="True" />
+                <BoxView Color="Silver" WidthRequest="150" HeightRequest="50" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" />
+                <Image Source="camera.png" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" />
+                <Image Source="logo_black.png" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Fill">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ImageTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="camera.png" Aspect="AspectFit" HorizontalOptions="Start" VerticalOptions="Fill" WidthRequest="50">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PhotoImageTapped" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
