@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamlExample.ExamplePage">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Padding="15,15">
+                <BoxView HeightRequest="50" WidthRequest="100" Color="Brown" />
+                <!-- Using Static markup extension with attribute syntax-->
+                <BoxView HeightRequest="50" WidthRequest="100" Color="{x:Static Color.Blue}" />
+                <!-- Static markup extension with element syntax-->
+                <BoxView HeightRequest="50" WidthRequest="100">
+                    <BoxView.Color>
+                        <x:Static>Color.Green</x:Static>
+                    </BoxView.Color>
+                </BoxView>
+
+                <!-- Array markup extension with an array of strings -->
+                <!--
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Dog</x:String>
+                    <x:String>Cat</x:String>
+                </x:Array>
+                -->
+
+                <!--Using Array as Item Source-->
+                <Picker>
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type sys:String}">
+                            <x:String>Laptop</x:String>
+                            <x:String>Keyboard</x:String>
+                            <x:String>Mouse</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <!--Reference Extension-->
+                <Label x:Name="MyLabel" Text="Hello Entry" />
+                <Entry Text="{Binding Path=Text, Source={x:Reference MyLabel}}" />
+                
+                <!--Make a Text property null-->
+                <Label Text="{x:Null}" />
+                
+                <!--Default constructor- may not require arguments -->
+                <DatePicker />
+                
+                <!--Non default constructor - may require arguments which as passed using the Arguments elemnt -->
+                <BoxView>
+                    <BoxView.Color>
+                        <Color>
+                            <x:Arguments>
+                                <x:Double>0.72</x:Double>
+                                <x:Double>0.25</x:Double>
+                                <x:Double>0.2</x:Double>
+                                <x:Double>0.9</x:Double>
+                            </x:Arguments>
+                        </Color>
+                    </BoxView.Color>
+                </BoxView>
+                <!-- Factory methods: Publicly accessible static methods used to create an object. 
+                     Here the FromHex factory method is used to create the Color object 
+                     Other factory methods of the Color class included FromRgb, FromRgba and FromHsla -->    
+                <BoxView>
+                    <BoxView.Color>
+                        <Color x:FactoryMethod="FromHex">
+                            <x:Arguments>
+                                <x:String>#02d657</x:String>
+                            </x:Arguments>
+                        </Color>
+                    </BoxView.Color>
+                </BoxView>
+                
+                
+                <!--Xamarin.Form Syntax-->                
+                <!--The property element syntax-->
+                <Label>
+                    <Label.Text>Property Element Syntax</Label.Text>
+                </Label>
+                
+                <!--The Content Proprty Syntax-->
+                <Label>Content Property Syntax</Label>
+                
+                <!--Enumeration value syntax-->
+                <Button FontSize="Medium" Text="Enmeration Value" />
+                <Button FontAttributes="Italic,Bold" Text="Flag Attributes" />
+                
+                <!--Event Handler Syntax-->
+                <Button Text="Make it so" Clicked="ButtonClicked" />
+
+                <!-- Collection syntax -->
+                <StackLayout>
+                    <Label Text="Child 1" />
+                    <Button Text="Child 2" />
+                </StackLayout>
+                
+                <!--Attachement property syntax -->
+                <Grid>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Row 1 Col 1" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="Row 1 Col2" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="Row 2 Col 1" />
+                    <Label Grid.Row="2" Grid.Column="2" Text="Row 2 Col2" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
