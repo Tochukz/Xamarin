@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LayoutApp.StackLayoutPage"
+             Padding="10, 10, 10, 5">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="Aqua">
+                <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand">Vertical  Stacking</Label>
+                <Label Text="Start is flushed left" HorizontalOptions="Start" />
+                <Label Text="Center" HorizontalOptions="Center" />
+                <Label Text="End is flushed right" HorizontalOptions="End" />
+            </StackLayout>
+            <StackLayout BackgroundColor="Bisque" Orientation="Horizontal">
+                <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand">Horizontal Stacking</Label>
+                <Label Text="First"/>
+                <Label Text="Second" />
+                <Label Text="Third" />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Start And Expand" BackgroundColor="Red" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Fill And Exapand" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" />
+                <Label Text="Center And Expqand" BackgroundColor="Pink" HorizontalOptions="CenterAndExpand" />
+                <Label Text="End And Expand" BackgroundColor="Green" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

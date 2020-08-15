@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LayoutApp.AbsoluteLayoutPage">
+    <ContentPage.Content>
+        <AbsoluteLayout VerticalOptions="FillAndExpand">
+            <!-- HorizontalOptions, VerticalOptions, and Expand layout options are overridden by absolute positioning.-->
+            <Label Text="Absolute Label 1"
+                   BackgroundColor="GreenYellow"
+                   AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+             />
+            <Label Text="Location Points" 
+                    BackgroundColor="Indigo"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" 
+             />
+            <Label Text="Absolute Label 2" 
+                   BackgroundColor="Teal" 
+                   AbsoluteLayout.LayoutBounds="0, 1, AutoSize, AutoSize"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"
+            />  
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

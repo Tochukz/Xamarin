@@ -22,6 +22,7 @@ __Anatomy of XAML files__
 The names of the events handlers specified in XAML must be instance methods that exist in the code behind. They cannot be static.   
 Event handlers need to be used wisely, ideally only to enhance the controls they are serving and not to access services and business layer. Instead consider using other techniques such as behaviors, commands, and triggers or data binding for more reusable code.  
 
+
 __XAML Compilation__  
 For backward compatibility, XAML is interpreted at runtime. This impacts performance and  does not take advantage of compile-time error checking.   
 You can turn on compilation at both the assembly and class level to improve performance and take advantage of compile-time error checking by adding the `XamlCompilation` attribute.  
@@ -41,3 +42,7 @@ public class MyPage: ContentPage
   ...
 }
 ```
+
+## Chapter 3: UI Design Using Layouts  
+
+## Chapter 4: Styles, Themes and CSS
