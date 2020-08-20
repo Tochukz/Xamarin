@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FeedbackApp.FeedbackPage"
+             BackgroundColor="{StaticResource PageBgColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="SubjectPlaceholder">Your Subject</x:String>
+            <x:String x:Key="FeebbackPlaceholder">Your Feedback</x:String>
+            <Color x:Key="PageBgColor">#4CAF50</Color>
+            <Color x:Key="FormBgColor">#AAAAAA</Color>
+            <Color x:Key="InputTextColor">Navy</Color>
+            <Color x:Key="InputPlaceholderColor">Silver</Color>
+            <Color x:Key="FeedbackBorderColor">Silver</Color>
+            <FontAttributes x:Key="InputFontStyle">Italic</FontAttributes>
+            <Color x:Key="BtTextColor">White</Color>
+            <Color x:Key="BtSubmitColor">#4CAF50</Color>
+            <Color x:Key="BtCancelColor">#f47442</Color>
+            <FontAttributes x:Key="BtFontStyle">Bold</FontAttributes>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Row="0"                  
+                   Placeholder="Your Subject"/>
+            <Editor Grid.Row="1"                    
+                    Placeholder="Your Feedback" 
+                    x:Name="Feedback"
+                    Focused="HandleFeedback"
+                    Unfocused="HandleFeedback"/>
+            <StackLayout Grid.Row="2"                         
+                         Orientation="Vertical">
+                <Button Text="Submit" />
+                <Button Text="Cancel" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

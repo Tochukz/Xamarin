@@ -46,3 +46,8 @@ public class MyPage: ContentPage
 ## Chapter 3: UI Design Using Layouts  
 
 ## Chapter 4: Styles, Themes and CSS
+__Todo:__ Comeback later to review the theming section and how to implement dark and light themes.  
+Continue the [Article](https://devblogs.microsoft.com/xamarin/app-themes-xamarin-forms/with with the project `ThemingApp`  
+
+
+## Chapter 5: User Interactions Using Controls    

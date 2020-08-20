@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FeedbackApp.StylesPage"
+             xmlns:local="clr-namespace:FeedbackApp">
+    <ContentPage.Resources>
+        <!--Merging a single imported dictionary -->
+        <ResourceDictionary MergedWith="local:MyStyles" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Row="0"                                    
+                   x:Name="Subject"
+                   Unfocused="HandleSubject"
+                   Focused="HandleSubject"/>
+            <StackLayout Grid.Row="1" Style="{StaticResource FeedbackBorder}">
+                <Editor                         
+                        x:Name="Feedback"
+                        Focused="HandleFeedback"
+                        Unfocused="HandleFeedback" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <Button Style="{StaticResource SubmitButton}"/>
+                <Button Style="{StaticResource CancelButton}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

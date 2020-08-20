@@ -1,0 +1,33 @@
+﻿.SubmitButton {
+	color: white;
+	font-style: bold;
+	background-color: #4CAF50;
+}
+.CancelButton {
+	color: white;
+	font-style: bold;
+	background-color: #f47442;
+}
+.InactiveButton {
+  color: white;
+  font-style: bold;
+  background-color: gray;
+}
+
+#Subject, #Feebback {
+	color: navy;
+	font-style: italic;
+	background-color: white;
+}
+.FeedbackBorder {
+	padding: 1;
+	background-color: silver;
+}
+^ContentPage {
+	background-color: #4CAF50;
+	padding: 30 30;
+}
+^Grid {
+	background-color: #AAAAAA;
+	padding: 30 30;
+}

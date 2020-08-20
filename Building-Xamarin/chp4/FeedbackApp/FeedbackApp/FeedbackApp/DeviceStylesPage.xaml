@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FeedbackApp.DeviceStylesPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Name="MyTitleStle" TargetType="Label" BaseResourceKey="TitleStyle">
+                <Setter Property="TextColor" Value="#4CAF50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Regular Text" />
+            <Label Text="My Title Style" Style="{DynamicResource MyTitleStyle}" />
+            <Label Text="Title" Style="{DynamicResource TitleStyle}" />
+            <Label Text="Subtitle Text Style" Style="{DynamicResource SubtitleTextStyle}" />
+            <Label Text="Body Stye" Style="{DynamicResource BodyStyle}" />
+            <Label Text="Caption Style" Style="{DynamicResource CaptionStype}" />
+            <Label Text="List Item Text Style" Style="{DynamicResource ListItemTextStyle}" />
+            <Label Text="List Item Detail Style" Style="{DynamicResource ListItemDetailStyle}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

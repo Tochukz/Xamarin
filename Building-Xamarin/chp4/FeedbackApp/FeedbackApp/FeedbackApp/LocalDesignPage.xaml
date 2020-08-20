@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FeedbackApp.LocalDesignPage"            
+             BackgroundColor="#4CAF50"
+             Title="Local Design">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#AAAAAA" Padding="30" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Row="0"                  
+                   Placeholder="Your Subject"
+                   TextColor="Navy"
+                   FontAttributes="Italic" />
+            <StackLayout Grid.Row="1" Orientation="Vertical" Padding="1" BackgroundColor="Silver">
+                <Editor Placeholder="Your Feedback" 
+                        VerticalOptions="FillAndExpand" 
+                        TextColor="Navy"
+                        FontAttributes="Italic" />
+            </StackLayout>
+            
+            <StackLayout Grid.Row="2"                         
+                         Orientation="Vertical">
+                <Button Text="Submit" 
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        BackgroundColor="#4CAF50"/>
+                <Button Text="Cancel" 
+                        TextColor="White"
+                        FontAttributes="Bold"                     
+                        BackgroundColor="#f47442" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

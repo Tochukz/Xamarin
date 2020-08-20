@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FeedbackApp.DynamicResourcesPage"
+             BackgroundColor="{DynamicResource PageBgColor}" 
+             Title="Import Resources">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="SubjectPlaceholder">Your Subject</x:String>
+            <x:String x:Key="FeedbackPlaceholder">Enter your feedback</x:String>
+            <Color x:Key="PageBgColor">#4CAF50</Color>
+            <Color x:Key="PageBgColorNoSubject">#85af87</Color>
+            <Color x:Key="PageBgColorWithSubject">#4CAF50</Color>
+            <Color x:Key="FormBgColor">#AAAAAA</Color>
+            <Color x:Key="InputTextColor">Navy</Color>
+            <Color x:Key="InputPlaceholderColor">Silver</Color>
+            <Color x:Key="FeedbackBorderColor">Silver</Color>
+            <FontAttributes x:Key="InputFontStyle">Italic</FontAttributes>
+            <Color x:Key="BtTextColor">White</Color>
+            <Color x:Key="BtSubmitColor">#4CAF50</Color>
+            <Color x:Key="BtCancelColor">#f47442</Color>
+            <Color x:Key="BtSubmitActiveColor">#4CAF50</Color>
+            <Color x:Key="BtCancelActiveColor">#f47442</Color>
+            <Color x:Key="BtInactiveColor">Gray</Color>
+            <FontAttributes x:Key="BtFontStyle">Bold</FontAttributes>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{DynamicResource FormBgColor}" Padding="30" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry Grid.Row="0"                  
+                   Placeholder="{DynamicResource SubjectPlaceholder}"
+                   TextColor="{DynamicResource InputTextColor}"
+                   FontAttributes="{DynamicResource InputFontStyle}" 
+                   x:Name="Subject"
+                   Unfocused="HandleSubject"
+                   Focused="HandleSubject"/>
+            <StackLayout Grid.Row="1" Orientation="Vertical" Padding="1" BackgroundColor="{DynamicResource FeedbackBorderColor}">
+                <Editor  
+                        VerticalOptions="FillAndExpand" 
+                        TextColor="{DynamicResource InputTextColor}"
+                        FontAttributes="{DynamicResource InputFontStyle}"
+                        x:Name="Feedback"
+                        Focused="HandleFeedback"
+                        Unfocused="HandleFeedback" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2"                         
+                         Orientation="Vertical">
+                <Button Text="Submit" 
+                        TextColor="{DynamicResource BtTextColor}"
+                        FontAttributes="{DynamicResource BtFontStyle}"
+                        BackgroundColor="{DynamicResource BtSubmitColor}"/>
+                <Button Text="Cancel" 
+                        TextColor="{DynamicResource BtTextColor}"
+                        FontAttributes="{DynamicResource BtFontStyle}"                     
+                        BackgroundColor="{DynamicResource BtCancelColor}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
