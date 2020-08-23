@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ControlsApp.Controls"
+             xmlns:my="clr-namespace:ControlsApp">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="Center">
+                <Label x:Name="EventValue" Text="Value in Event" />
+                <Label x:Name="PageValue" Text="Value in Page" />
+
+                <Picker x:Name="ThePicker" Title="Options" SelectedIndexChanged="PickerSelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>First</x:String>
+                            <x:String>Second</x:String>
+                            <x:String>Third</x:String>
+                            <x:String>Fourth</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <DatePicker x:Name="TheDatePicker" 
+                            Format="D"
+                            VerticalOptions="CenterAndExpand" 
+                            DateSelected="DatePicketDateSelected"></DatePicker>
+
+                <TimePicker x:Name="TheTimePicker" 
+                            Format="T"
+                            VerticalOptions="CenterAndExpand" 
+                            PropertyChanged="TimePickerPropertyChanged"></TimePicker>
+
+                <Stepper x:Name="TheStepper" 
+                         Minimum="0"
+                         Maximum="10"
+                         Increment="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand"
+                         ValueChanged="StepperValueChnaged"></Stepper>
+
+                <Slider x:Name="TheSlider"
+                        VerticalOptions='CenterAndExpand' 
+                        WidthRequest="300"
+                        BackgroundColor="Blue"
+                        Minimum="0" 
+                        Maximum="100" 
+                        Value="50" 
+                        ValueChanged="SliderValueChanged"></Slider>
+
+                <Switch x:Name="TheSwitch"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Toggled="SwitchToggled"></Switch>
+
+                <Label Text="Normal" />
+                <Label Text="Scale 0.7" Scale="0.7"/>
+                <Label Text="Invisilble" IsVisible="False" />
+                <Button Text="Normal" />
+                <Button Text="Disabled" IsEnabled="False" />
+                <BoxView BackgroundColor="Blue" Opacity="0.5"/>
+                <BoxView BackgroundColor="Orange" RotationY="60"/>
+
+                <Entry x:Name="Username" Placeholder="Your Name" />
+
+                <my:MyControl />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

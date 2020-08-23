@@ -1,6 +1,7 @@
 # Building Xamarin.Forms Mobile App Using XAML (2019)
 __By Dan Hermes__  
-[Example Code](https://github.com/danhermes/xamarin-xaml-book-examples)
+[Github Code Examples](https://github.com/danhermes/xamarin-xaml-book-examples)  
+[MS Docs Guides](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/)
 
 ## Chapter 1: Building Apps Using Xamarin
 
@@ -51,3 +52,14 @@ Continue the [Article](https://devblogs.microsoft.com/xamarin/app-themes-xamarin
 
 
 ## Chapter 5: User Interactions Using Controls    
+
+Useful Links:
+__MS Docs:__
+[Content View](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/contentview)  
+[Control Template](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/control-template)  
+[Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers)  
+[Attached Property](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/attached-properties)  
+[Bindable Property](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/bindable-properties)  
+[Behaviors](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/)  
+
+## Chapter 6: Making Scrollable List
