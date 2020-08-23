@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TriggersApp.DataTriggerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--DataTrigger: The Button is disabled and is only enables if the string length of the Entry is gretter than 0-->
+            <Entry x:Name="city" Text="" Placeholder="City" />
+            <Button x:Name="submit" Text="Go">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference city}, Path=Text.Length}" Value="0">
+                        <Setter Property="IsEnabled" Value="False" />
+                        <!--Additional setters if needed-->
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TriggersApp.MultiTriggerPage"
+             xmlns:local="clr-namespace:TriggersApp;assembly=TriggersApp">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MultiTriggerConverter x:Key="validateInput" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Multi trigger-->
+            <Entry x:Name="email" Placeholder="Email" Text="" />
+            <Entry x:Name="phone" Placeholder="Phone" Text="" />
+            <Button Text="Search">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0" />
+                            <BindingCondition Binding="{Binding Source={x:Reference phone}, Path=Text.Length}" Value="0" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="False" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <!-- Using a Converter in MultiTrigger-->
+            <Entry x:Name="username" Placeholder="Username" Text=""/>
+            <Entry x:Name="password" Placeholder="Password" Text="" IsPassword="True" />
+            <Button Text="Login" IsEnabled="False">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference username}, Path=Text, Converter={StaticResource validateInput}}" Value="True"/>
+                            <BindingCondition Binding="{Binding Source={x:Reference password}, Path=Text, Converter={StaticResource validateInput}}" Value="True"/>
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True" />
+                        <Setter Property="BackgroundColor" Value="Green" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
