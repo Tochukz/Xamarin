@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TemplateApp.Controls.CardView"
+             x:Name="this">
+  <ContentView.Content>
+        <Frame BindingContext="{x:Reference this}"
+               BackgroundColor="{Binding CardColor}"
+               BorderColor="{Binding BorderColor}">
+            <StackLayout>
+                <Frame BorderColor="{Binding BorderColor, FallbackValue='Black'}"
+                       BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Gray'}"
+                       HeightRequest="100">
+                    <Image Source="{Binding IconImageSource }" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" />
+                </Frame>
+                <Label Text="{Binding CardTitle, FallbackValue='Card Title here'}" />
+                <BoxView BackgroundColor="{Binding BorderColor, FallbackValue='Black'}" />
+                <Label Text="{Binding CardDescription, FallbackValue='Card description text.'}" />
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

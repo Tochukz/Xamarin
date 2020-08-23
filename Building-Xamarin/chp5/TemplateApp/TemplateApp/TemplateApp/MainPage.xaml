@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TemplateApp.MainPage"
+             xmlns:controls="clr-namespace:TemplateApp.Controls">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate x:Key="CompactCardView">
+                <StackLayout BackgroundColor="{TemplateBinding CardColor}">
+                    <Image Source="{TemplateBinding IconImageSource}" Aspect="AspectFit" HeightRequest="50" WidthRequest="50" />
+                    <Label Text="{TemplateBinding CardTitle}" />
+                    <BoxView BackgroundColor="{TemplateBinding BorderColor}" />
+                    <Label Text="{TemplateBinding CardDescription}" />
+                </StackLayout>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>    
+        <StackLayout>
+            <!-- Using Custom Control or ContentView -->
+            <controls:CardView BorderColor="Red"
+                              CardTitle="Slavko Vlasic"
+                              CardDescription="Just a test card"
+                              IconBackgroundColor="Silver"
+                              IconImageSource="photo.png" />
+        
+            <!-- Overriding the layout of the Custom Control using ControlTemplate defined in the Resource dictionary above-->
+            <controls:CardView ControlTemplate="{StaticResource CompactCardView}"
+                               BorderColor="Green"                                                             
+                               CardTitle="Control Temp"
+                               CardDescription="Control Template in Action" 
+                               IconBackgroundColor="LightBlue"
+                               IconImageSource="button.jpg" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
