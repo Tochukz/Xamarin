@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListApp.CustomListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="BookList" ItemTapped="BookListItemTapped" RowHeight="150" SeparatorColor="Red">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="More" Clicked="MoreClicked" CommandParameter="{Binding .} "/>
+                                <MenuItem Text="Delete" Clicked="DeleteClicked" CommandParameter="{Binding .}"  IsDestructive="True"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal" Padding="5, 5, 5, 5">
+                                <StackLayout HorizontalOptions="Center">
+                                    <Image Source="{Binding ImgSrc}" HeightRequest="100"/>
+                                    <Label Text="{Binding Price}" HorizontalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" />
+                                    <Label Text="{Binding Description}" />
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="End">
+                                    <Button x:Name="AddButton" 
+                                            Text="Add to Cart" 
+                                            BackgroundColor="Orange" 
+                                            Clicked="AddCartClicked" 
+                                            CommandParameter="{Binding .}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,7 +6,7 @@ __By Dan Hermes__
 ## Chapter 1: Building Apps Using Xamarin
 
 
-## Chapter 2:  Building Xamarin.Forms App Using XAML  
+## Chapter 2:  Building Xamarin.Form App Using XAML  
 If you come across the _namespace could not be found_ error while trying to load a namespace and library to your XAML document like this,
 ```
 <ContentPage ...
@@ -51,10 +51,8 @@ __Todo:__ Comeback later to review the theming section and how to implement dark
 Continue the [Article](https://devblogs.microsoft.com/xamarin/app-themes-xamarin-forms/with with the project `ThemingApp`  
 
 
-## Chapter 5: User Interactions Using Controls    
-
-Useful Links:
-__MS Docs:__
+## Chapter 5: User Interactions Using Controls      
+__MS Docs:__  
 [Content View](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/contentview)  
 [Control Template](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/control-template)  
 [Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers)  
@@ -62,4 +60,16 @@ __MS Docs:__
 [Bindable Property](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/bindable-properties)  
 [Behaviors](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/)  
 
+[Views](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/views)  
+__Working With Icons__  
+[Use FontAwesome in Xamarin Form](https://medium.com/@tsjdevapps/use-fontawesome-in-a-xamarin-forms-app-2edf25311db4)  
+[Fonts](https://fontawesome.com/icons?d=gallery&s=brands,regular,solid&m=free)  
+
 ## Chapter 6: Making Scrollable List
+__MS DOCS:__  
+[Collection View](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/)  
+
+__Customizing List Rows__    
+Customizing a list can result in a beautiful, highly functional UI feature. It is also one of the best ways to destroy a list's performance, so customize with caution. Use _TextCell_ and _ImageCell_ as much as you can before deciding to customize.  
+
+## Chapter 7: Navigation   
