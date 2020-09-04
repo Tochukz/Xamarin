@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DrillDownApp.BookDetailsPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Title"  FontAttributes="Bold"  Grid.Row="0" Grid.Column="0" />
+            <Label Text="Author" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" />
+            <Label Text="Description" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" />
+
+            <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="1" />
+            <Label Text="{Binding Author}" Grid.Row="1" Grid.Column="1" />
+            <Label Text="{Binding Description}" Grid.Row="2" Grid.Column="1" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

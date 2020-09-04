@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DrillDownApp.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="PageList" ItemTapped="ToPage">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Title}" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <!--Using Table View-->
+            <TableView Intent="Menu">
+                <TableView.Root>
+                    <TableSection Title="Pages">
+                        <TextCell Text="Book List" CommandParameter="BookList" Tapped="GotoPage" />
+                        <TextCell Text="About Page" CommandParameter="About" Tapped="GotoPage" />
+                    </TableSection>
+                    <!--You can add more table sections where each section represents a grouped list-->
+                </TableView.Root>
+            </TableView>  
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
