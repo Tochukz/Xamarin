@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StateApp.SpecificationPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="HDD" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
+            <Label Text="RAM" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" />
+            <Label Text="SCREEN" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" />
+
+            <Label Text="{Binding HDD}" Grid.Row="0" Grid.Column="1" />
+            <Label Text="{Binding RAM}" Grid.Row="1" Grid.Column="1" />
+            <Label Text="{Binding Screen}" Grid.Row="2" Grid.Column="1" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

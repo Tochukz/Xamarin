@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StateApp.UserPage"
+             x:Name="this">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label" >
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10,5" BindingContext="{x:Reference this}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Name" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}" />
+            <Label Text="Email" Grid.Row="1" Grid.Column="0" Style="{StaticResource labelStyle}" />
+            <Label Text="City" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}" />
+            <Label Text="Salary" Grid.Row="3" Grid.Column="0" Style="{StaticResource labelStyle}" />
+          
+            <Label Text="{Binding UserState.Name}" Grid.Row="0" Grid.Column="1" />
+            <Label Text="{Binding UserState.Email}" Grid.Row="1" Grid.Column="1" />
+            <Label Text="{Binding UserState.City}" Grid.Row="2" Grid.Column="1" />
+            <Label Text="{Binding UserState.Salary}" Grid.Row="3" Grid.Column="1" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

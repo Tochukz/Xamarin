@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StateApp.HelpPage"
+             x:Name="this">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="labelStyle">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BindingContext="{x:Reference this}" VerticalOptions="Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition  Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="App Name" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}" />
+                <Label Text="Version"  Grid.Row="1" Grid.Column="0" Style="{StaticResource labelStyle} "/>
+                <Label Text="Creator"  Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}" />
+
+                <Label Text="{Binding AppName}" Grid.Row="0" Grid.Column="1" />
+                <Label Text="{Binding AppVersion}" Grid.Row="1" Grid.Column="1" />
+                <Label Text="{Binding AppCreator}" Grid.Row="2" Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
