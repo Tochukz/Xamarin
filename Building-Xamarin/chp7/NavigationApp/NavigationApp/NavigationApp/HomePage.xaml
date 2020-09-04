@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NavigationApp.HomePage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Order="Secondary" Clicked="Navigate" CommandParameter="SettingsPage" />
+        <ToolbarItem Text="Logout"   Order="Secondary" Clicked="Navigate" CommandParameter="LoginPage" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Home Page" FontSize="40" />
+            <Button Text="ContactUs Page" Clicked="ToContactPage" />
+            <Button Text="Make Payment" Clicked="ShowAlert" />
+
+            <Label x:Name="OptionTxt" />
+            <Button Text="Choose Language" Clicked="ShowActionSheet" />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -73,3 +73,38 @@ __Customizing List Rows__
 Customizing a list can result in a beautiful, highly functional UI feature. It is also one of the best ways to destroy a list's performance, so customize with caution. Use _TextCell_ and _ImageCell_ as much as you can before deciding to customize.  
 
 ## Chapter 7: Navigation   
+__Customizing the Navigation Bar__  
+We use C# instead of XAML for _NavigationPage_ because _NavigationPage_ does not have a property for the root page and the Xamarin recommended approach is to use C# for _NavigationPage_.  
+
+__State Management__  
+The _Properties_ dictionary persists when your app is backgrounded an even after your app has restarted!  
+
+__Using a Static Global Class__  
+__Caution__ Overuse of static global classes can tax memory and affect performance. Pass variables directly between pages whenever you can so they go out of scope when no longer needed.  
+
+__Creating a MasterDetails Page__  
+A _MasterDetailPage_ is designed to be a root page, and using it as a child page in other page types could result in unexpected and inconsistent behavior. In addition, it's recommended that the master page of a _MasterDetailPage_ should always be a _ContentPage_ instance, and that the detail page should only be populated with _TabbedPage_, _NavigationPage_, and _ContentPage_ instances. This will help to ensure a consistent user experience across all platforms.  
+__NB:__ The _MasterDetailPage.Master_ page must have its Title property set, or an exception will occur.  
+
+__MS Docs:__ [Master Details Page](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/master-detail-page)    
+
+__Tabbed Page__  
+It's recommended that a _TabbedPage_ should be populated with _NavigationPage_ and _ContentPage_ instances only.
+This will help to ensure a consistent user experience across all platforms.  
+__Warning:__ In a _TabbedPage_, each Page object is created when the _TabbedPage_ is constructed.
+This can lead to a poor user experience, particularly if the _TabbedPage_ is the root page of the application.
+However, _Xamarin.Forms Shell_ enables pages accessed through a tab bar to be created on demand, in response to navigation.
+For more information, see [Xamarin.Forms Shell](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/).  
+__Warning:__ While a _NavigationPage_ can be placed in a _TabbedPage_, it's not recommended to place a `TabbedPage` into a `NavigationPage`. This is because, on iOS, a `UITabBarController` always acts as a wrapper for the `UINavigationController`. For more information, see [Combined View Controller Interfaces](https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) in the iOS Developer Library.  
+
+__MS Docs:__ [Tabbed Page](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/tabbed-page)  
+[Tabbed Page Styling](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color)
+
+__Creating Data-Bound Tabs__
+Todo: Return back to this later
+
+__Carousel Using Carousel Pages__  
+When using _CarouselPage_ as a detail page in _MasterDetailPage_, set `MasterDetailPage.IsGestureEnabled` to `false` to prevent gesture conflicts between
+`CarouselPage` and `MasterDetailPage`.  
+
+## Chapter 8: Custom Renderers, Effects, and Native Views
