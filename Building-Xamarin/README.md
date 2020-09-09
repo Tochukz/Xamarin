@@ -107,4 +107,36 @@ __Carousel Using Carousel Pages__
 When using _CarouselPage_ as a detail page in _MasterDetailPage_, set `MasterDetailPage.IsGestureEnabled` to `false` to prevent gesture conflicts between
 `CarouselPage` and `MasterDetailPage`.  
 
-## Chapter 8: Custom Renderers, Effects, and Native Views
+## Chapter 8: Custom Renderers, Effects, and Native Views  
+__Custom Renderer__  
+The renderers take a cross-platform element and draw it on the screen using the platform-specific UI library.
+All Xamarin screens use renderers.  
+If you want to gain access to all of the properties and methods within platform-specific elements
+(such as UILabel, TextView, and TextBlock), then you need to create a custom renderer or an Effect.
+
+__When to Use a Custom Renderer__  
+Use a custom control when you need direct access to an element's platform-specific properties and methods.  
+
+__Creating and Using a Custom Renderer__    
+A custom renderer is created to implement the visual representation of a custom element.
+
+__Which Renderer and View Do You Customize__  
+See Table 8-1 on page 318 for details of renderers to use for various Xamarin.Form element for both platform specific views.
+
+__Effects__  
+Effects offer a reusable and lightweight approach to extend the capability of a Xamarin.Forms view compared to a custom renderer.  
+Use effects if you only need to change a small number of the properties or behaviors of the underlying platform-specific control that Xamarin.Forms uses.  
+
+__Creating and Using Effects__  
+The developer needs to ensure that an effect is not accidentally added to a view that the effect does not support.  
+
+__Adding Effects via Attached Properties__  
+Attached properties can also be used to attach commands, behaviors, triggers, and other functionality to XAML elements.
+
+__Native Views__  
+Using native views requires knowledge of the platform-specific APIs, Xamarin.iOS and Xamarin.Andrios.  
+
+__MS Docs:__ [Custom Renderer](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/)  
+[Renders Base Clases](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/renderers)  
+
+## Chapter 9: Data Access with SQLite and Data Binding  
