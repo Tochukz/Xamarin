@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BindingApp.ObservableBookListPage">
+    <ContentPage.Content>
+          <StackLayout Padding="10">
+                <ListView ItemsSource="{Binding .}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label Text="{Binding Title}" />
+                                        <Label Text="{Binding Description}" FontSize="Micro" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                        <Button Text="x" Clicked="DeleteBook" CommandParameter="{Binding BookId}" HeightRequest="30" WidthRequest="30" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Entry x:Name="TitleEntry" Placeholder="Ttile" />
+                <Editor x:Name="DescriptionEditor" Placeholder="Description" />
+                <Button Text="Add Book" Clicked="AddBook" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
