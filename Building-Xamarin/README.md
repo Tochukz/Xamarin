@@ -140,3 +140,37 @@ __MS Docs:__ [Custom Renderer](https://docs.microsoft.com/en-us/xamarin/xamarin-
 [Renders Base Clases](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/renderers)  
 
 ## Chapter 9: Data Access with SQLite and Data Binding  
+__What Is SQLite__  
+You can use SQLite with Xamarin in one of two ways:  
+* Using SQLite.NET ORM
+* Using Third-party MVVM libraries e.g _MvvmCross_, _ReactiveUI_ or _MVVM Light Toolkit_
+Learn more about [MVVM Cross](https://www.mvvmcross.com/)  
+Learn more about [MVVM Light Toolkit](http://www.mvvmlight.net/doc)  
+Learn more about [ReactiveUI](https://www.reactiveui.net/docs/getting-started/)    
+
+__Data Storage Options__  
+1. File-bases Storage
+  * XML
+  * JSON
+  * HTML
+  * CSV
+2. Preferences (key/value storage)
+3. Local Database  
+
+__Binding to View Models and Data Models__  
+Here are the three approaches:  
+1. Create a view model that implements _INotifyPropertyChanged_     
+  The disadvantage of the approach is that it leads to code duplication with multiple _INotifyPropertyChanges_ implementations of the same property in different view models.  
+2. Implement _INotifyPropertyChanged_ in your data model  
+  The disadvantage of the approach is that it clutters up the data model and increases the number if notifications sent, which can impact performance for large data objects.  
+3. Wrap your data model in an _Observable_ class  
+ This approaches avoids the problems found in the first two approaches. Here you wrap your data model in a class that implements _INofityPropertyChanges_ to make it observable (at the code of creating yet another subclass).
+
+__Locking Is Key__  
+There are two ways to achieve locking with SQLite:  
+1. Synchronous SQLite calls and explicit locking.  
+2. Asynchronous SQLite calls with implicit locking. Async calls do the locking for you.
+
+Learn about _SQLite asynchronous API_.
+__MD Docs__   
+[SQLite Database](https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/database?pivots=windows)
