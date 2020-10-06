@@ -56,3 +56,13 @@ A gesture recognizer is a class that can be added to many views to respond to us
 Often when a button or image is pressed, the result should be backgrounded using _async/await_ for an optimal user experience.  
 
 ## Chapter 3: UI Design Using Layouts  
+__MS Docs__  
+[Absolute Layout](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/absolutelayout)  
+
+__Using Android Layouts__  
+Skipped this for now.
+
+__Using iOS Layouts__  
+Skipped this for now.  
+
+## Chapter 4: User Interaction Using Controls  
