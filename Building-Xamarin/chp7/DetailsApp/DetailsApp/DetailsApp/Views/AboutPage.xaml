@@ -10,6 +10,7 @@
             <Label Text="The About Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Product List" Clicked="ProductListPage" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

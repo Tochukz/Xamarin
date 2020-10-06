@@ -16,5 +16,11 @@ namespace DetailsApp.Views
 		{
 			InitializeComponent();
 		}
+
+		private void ProductListPage(object sender, EventArgs args)
+		{
+			((NavPage)App.Current.MainPage).SetDetailsPage(new ProductListPage());
+		}
 	}
+
 }

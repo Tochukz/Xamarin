@@ -6,7 +6,7 @@ __By Dan Hermes__
 ## Chapter 1: Building Apps Using Xamarin
 
 
-## Chapter 2:  Building Xamarin.Form App Using XAML  
+## Chapter 2:  Building Xamarin.Forms App Using XAML  
 If you come across the _namespace could not be found_ error while trying to load a namespace and library to your XAML document like this,
 ```
 <ContentPage ...
@@ -45,6 +45,8 @@ public class MyPage: ContentPage
 ```
 
 ## Chapter 3: UI Design Using Layouts  
+__MS Docs__  
+[Absolute Layout](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/absolutelayout)   
 
 ## Chapter 4: Styles, Themes and CSS
 __Todo:__ Comeback later to review the theming section and how to implement dark and light themes.  
@@ -77,7 +79,7 @@ __Customizing the Navigation Bar__
 We use C# instead of XAML for _NavigationPage_ because _NavigationPage_ does not have a property for the root page and the Xamarin recommended approach is to use C# for _NavigationPage_.  
 
 __State Management__  
-The _Properties_ dictionary persists when your app is backgrounded an even after your app has restarted!  
+The _App.Current.Properties_ dictionary persists when your app is backgrounded an even after your app has restarted! _Properties_ work a bit like cookies for youe app.    
 
 __Using a Static Global Class__  
 __Caution__ Overuse of static global classes can tax memory and affect performance. Pass variables directly between pages whenever you can so they go out of scope when no longer needed.  
@@ -172,5 +174,11 @@ There are two ways to achieve locking with SQLite:
 2. Asynchronous SQLite calls with implicit locking. Async calls do the locking for you.
 
 Learn about _SQLite asynchronous API_.
-__MD Docs__   
+__MS Docs__   
 [SQLite Database](https://docs.microsoft.com/en-us/xamarin/get-started/quickstarts/database?pivots=windows)
+
+
+### Working with a REST API  
+Install the _NewtonSoft JSON.NET_ Nuget package.
+__MS Docs__
+[Consume a RESTful Web Service](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/rest)

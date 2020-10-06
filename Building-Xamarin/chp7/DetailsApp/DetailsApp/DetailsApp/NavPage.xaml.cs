@@ -18,6 +18,11 @@ namespace DetailsApp
 			MasterPage.ListView.ItemSelected += ListView_ItemSelected;
 		}
 
+		public void SetDetailsPage(Page page)
+		{
+			Detail = new NavigationPage(page);
+		}
+
 		private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			var item = e.SelectedItem as NavPageMasterMenuItem;
