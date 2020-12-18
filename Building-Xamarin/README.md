@@ -182,3 +182,8 @@ __MS Docs__
 Install the _NewtonSoft JSON.NET_ Nuget package.
 __MS Docs__
 [Consume a RESTful Web Service](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/rest)
+
+
+### Real Time Application Libraries  
+[Pusher Client](https://github.com/pusher/pusher-websocket-dotnet)  
+[Socket.io Client](https://github.com/doghappy/socket.io-client-csharp)
