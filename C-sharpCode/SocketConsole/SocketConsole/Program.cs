@@ -16,7 +16,7 @@ namespace SocketConsole
 			Console.WriteLine("Trying out Socket Client \nType your message any time to ping.");
 
 			SocketIOOptions options = new SocketIOOptions { ConnectionTimeout = new TimeSpan(0, 2, 30) };
-			string url = "http://127.0.0.1:4001";
+			string url = "http://127.0.0.1:8084";
 			Client = new SocketIO(url, options);
 
 			SetupListeners();
