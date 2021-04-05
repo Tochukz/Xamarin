@@ -11,7 +11,7 @@ namespace ListApp
 			InitializeComponent();
 
 			// MainPage = new MainPage();
-			MainPage = new GroupedListPage();
+			MainPage = new CustomListPage();
 		}
 
 		protected override void OnStart()
