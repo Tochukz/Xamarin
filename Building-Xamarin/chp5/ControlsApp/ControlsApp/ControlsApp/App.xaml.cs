@@ -11,7 +11,7 @@ namespace ControlsApp
 			InitializeComponent();
 
 			//MainPage = new MainPage();
-			MainPage = new ControlViewPage();
+			MainPage = new Controls();
 		}
 
 		protected override void OnStart()
