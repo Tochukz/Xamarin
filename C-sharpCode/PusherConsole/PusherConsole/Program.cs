@@ -27,9 +27,9 @@ namespace PusherConsole
 
 		static async void InitPusher()
 		{			
-			string appKey = "xxxxxxxxxxxxxxxxxx";			
+			string appKey = "xxxxxxxxxxxxxxxxxxxxx";			
 			string appCluster = "ap2";
-			string channel = "staging";
+			string channel = "my-channel";
 
 			PsClient = new Pusher(appKey, new PusherOptions { Cluster = appCluster, Encrypted = true });
 
