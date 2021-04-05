@@ -79,7 +79,7 @@ __Customizing the Navigation Bar__
 We use C# instead of XAML for _NavigationPage_ because _NavigationPage_ does not have a property for the root page and the Xamarin recommended approach is to use C# for _NavigationPage_.  
 
 __State Management__  
-The _App.Current.Properties_ dictionary persists when your app is backgrounded an even after your app has restarted! _Properties_ work a bit like cookies for youe app.    
+The _App.Current.Properties_ dictionary persists when your app is backgrounded and even after your app has restarted! _Properties_ work a bit like cookies for youe app.    
 
 __Using a Static Global Class__  
 __Caution__ Overuse of static global classes can tax memory and affect performance. Pass variables directly between pages whenever you can so they go out of scope when no longer needed.  

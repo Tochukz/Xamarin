@@ -47,7 +47,13 @@ namespace SocketApp
 				};
 				client.OnError += (sender2, ev) =>
 				{
+					DisplayAlert("Socket Error", $"Error: {sender2.ToString()}", "OK");
 					Debug.WriteLine($"Error: {sender2} {sender2.ToString()}");
+				};
+				client.OnReconnectFailed += (sender3, evnt) =>
+				{
+					DisplayAlert("Socket Connection Failed", $"Connection Error: {sender3.ToString()}", "OK");
+					Debug.WriteLine($"Connection Failed: {sender3} {sender3.ToString()}");
 				};
 
 				await client.ConnectAsync();
@@ -71,12 +77,17 @@ namespace SocketApp
 		private void OnPong(SocketIOResponse response)
 		{
 			string message = response.GetValue<string>();
-			Debug.WriteLine($"New Pong: {message}");
-			PongLabel.Text = message;
+			Debug.WriteLine($"Pong: {message}");
+			PongLabel.Text = $"Pong: {message}";
 		}
 
 		private async void PingServer(object sender, EventArgs e)
 		{
+			if (SocketClient == null || SocketClient.Disconnected)
+			{
+				await DisplayAlert("Socket Error", "SocketClient is not ready", "OK");
+				return;
+			}
 		    await SocketClient.EmitAsync("pingMsg", PingEntry.Text);
 			Debug.WriteLine($"Pinged: {PingEntry.Text}");
 			PingEntry.Text = "";
