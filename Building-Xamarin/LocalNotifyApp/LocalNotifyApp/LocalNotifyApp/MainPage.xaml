@@ -3,22 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LocalNotifyApp.MainPage">
 
-    <StackLayout>
+    <StackLayout x:Name="mainStackLayout">
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Local Notification" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Label Text="Click this button below to trigger an instant notification" FontSize="16" Padding="30,0,30,0"/>
+        <Button Text="Trigger Notification" Background="Orange" Margin="30,0,30,0" Clicked="TrgiggerNotification" />
+
+        <Label Text="Enter a time in seconds and schedule a notification" FontSize="16" Padding="30,0,30,0"/>
+        <Stepper Margin="30,0,30,0" x:Name="timeStepper" />
+        <Button Text="Schedule Notification" BackgroundColor="Green" Margin="30,0,30,0" Clicked="scheduleNotification"/>
     </StackLayout>
 
 </ContentPage>
