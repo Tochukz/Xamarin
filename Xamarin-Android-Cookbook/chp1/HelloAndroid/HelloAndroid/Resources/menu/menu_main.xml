@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <!--The icons do not work at the moment-->
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:icon="@drawable/search_icon_small"
+        android:title="@string/action_settings"
+        app:showAsAction="ifRoom" />
+ 
+  <item android:id="@+id/action_search"
+      android:showAsAction="always"
+      android:icon="@drawable/search_icon_small"
+      android:title="@string/action_search"
+      android:text="Search"
+      android:actionViewClass="android.widget.SearchView"/>
+  <item android:id="@+id/action_refresh"
+      android:showAsAction="always"
+      android:icon="@drawable/refresh_icon"
+      android:title="@string/action_refresh"
+      android:text="Refesh"
+      android:actionViewClass="android.widget.SearchView"/>
+</menu>
