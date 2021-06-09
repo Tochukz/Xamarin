@@ -160,14 +160,17 @@ __Data Storage Options__
 2. Preferences (key/value storage)
 3. Local Database  
 
+__Data Binding__  
+Xamarin apps can use third-party data-binding libraries such as _MvvmCross_ or _MVVM Light_.
+
 __Binding to View Models and Data Models__  
 Here are the three approaches:  
 1. Create a view model that implements _INotifyPropertyChanged_     
   The disadvantage of this approach is that it leads to code duplication with multiple _INotifyPropertyChanges_ implementations of the same property in different view models.  
 2. Implement _INotifyPropertyChanged_ in your data model  
-  The disadvantage of this approach is that it clutters up the data model and increases the number if notifications sent, which can impact performance for large data objects.  
+  The disadvantage of this approach is that it clutters up the data model and increases the number of notifications sent, which can impact performance for large data objects.  
 3. Wrap your data model in an _Observable_ class  
- This approaches avoids the problems found in the first and second approaches. Here you wrap your data model in a class that implements _INofityPropertyChanges_ to make it observable (at the code of creating yet another subclass).
+ This approaches avoids the problems found in the first and second approaches. Here you wrap your data model in a class that implements _INofityPropertyChanges_ to make it observable (at the code by creating yet another subclass).
 
 __Locking Is Key__  
 There are two ways to achieve locking with SQLite:  
