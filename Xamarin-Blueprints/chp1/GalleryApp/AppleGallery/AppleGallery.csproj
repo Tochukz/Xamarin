@@ -118,8 +118,6 @@
         <Folder Include="Resources\" />
         <Folder Include="Models\" />
         <Folder Include="Controls\" />
-        <Folder Include="DataSources\" />
-        <Folder Include="Handlers\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -138,11 +136,9 @@
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="Controls\GalleryCell.cs" />
-        <Compile Include="Models\GalleryItem.cs" />
+        <Compile Include="Models\TableSource.cs" />
+        <Compile Include="Controls\ImageHandler.cs" />
     </ItemGroup>
-    <ItemGroup>
-      <BundleResource Include="DataSources\TableSource.cs" />
-      <BundleResource Include="Handlers\ImageHandler.cs" />
-    </ItemGroup>
+    <Import Project="..\SharedGallery\SharedGallery.projitems" Label="Shared" Condition="Exists('..\SharedGallery\SharedGallery.projitems')" />
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

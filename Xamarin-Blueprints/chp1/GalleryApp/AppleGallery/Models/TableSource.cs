@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using Foundation;
 using UIKit;
+using SharedGallery.Models;
+using AppleGallery.Controls;
 
-namespace AppleGallery.DataSources
+namespace AppleGallery.Models
 {
     public class TableSource : UITableViewSource
     {
