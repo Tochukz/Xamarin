@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurvyApp.ShapesPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+            <StackLayout.Resources>
+                <Style TargetType="Ellipse">
+                    <Setter Property="Fill" Value="#33222222" />
+                    <Setter Property="WidthRequest" Value="20" />
+                    <Setter Property="HeightRequest" Value="20" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+                <Style TargetType="Line">
+                    <Setter Property="Stroke" Value="#33222222" />
+                    <Setter Property="X2" Value="40" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+            </StackLayout.Resources>
+
+            <Grid ColumnDefinitions="*,279,*" RowDefinitions="*,160,350,*" BackgroundColor="Blue" HeightRequest="200">
+                <Ellipse Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="168" HeightRequest="168" Stroke="#FFFF9900" StrokeThickness="4" Fill="White" />
+                <Image Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="150" HeightRequest="150" Source="chucks.png">
+                    <Image.Clip>
+                        <EllipseGeometry Center="75,75" RadiusX="75" RadiusY="75" />
+                    </Image.Clip>
+                </Image>
+            </Grid>
+
+            <StackLayout Orientation="Horizontal">
+                <Ellipse Fill="#FF9900" />
+                <Line />
+                <Ellipse />
+                <Line />
+                <Ellipse />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

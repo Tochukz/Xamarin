@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurvyApp.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <!--<Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>-->
+  
+            <StackLayout Padding="5">
+                <Frame Padding="0" Margin="20" CornerRadius="20" BackgroundColor="DarkBlue" IsClippedToBounds="True">
+                    <Image Source="school2.jpg" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+        
+            <StackLayout Padding="5" BackgroundColor="Teal">
+                <Frame Padding="0" CornerRadius="100" WidthRequest="200" HorizontalOptions="Center"  IsClippedToBounds="True" BackgroundColor="White">
+                    <Image Source="chucks.png" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Padding="5" BackgroundColor="Navy">
+                <Image Source="chucks.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image.Clip>
+                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                    </Image.Clip>
+                </Image>
+            </StackLayout>
+            <Button Text="Shapes Page" Clicked="toShapPage"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
