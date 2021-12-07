@@ -1,5 +1,5 @@
 ﻿using System;
-namespace AppleGallery
+namespace SharedGallery.Models
 {
     public class GalleryItem
     {

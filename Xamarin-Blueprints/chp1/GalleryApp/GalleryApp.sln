@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppleGallery", "AppleGaller
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidGallery", "AndroidGallery\AndroidGallery.csproj", "{6CD02241-B598-49C3-96EE-B23D8F4A55D8}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedGallery", "SharedGallery\SharedGallery.shproj", "{6EEE8087-119F-4F07-ACD4-B26AF44C9606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator

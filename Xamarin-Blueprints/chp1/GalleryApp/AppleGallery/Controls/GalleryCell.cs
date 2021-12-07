@@ -1,6 +1,8 @@
 ﻿using System;
 using UIKit;
 using Foundation;
+using SharedGallery.Models;
+using AppleGallery.Models;
 
 namespace AppleGallery.Controls
 {

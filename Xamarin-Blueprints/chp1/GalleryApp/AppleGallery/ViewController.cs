@@ -2,7 +2,8 @@
 using System;
 using UIKit;
 using CoreGraphics;
-using AppleGallery.DataSources;
+using AppleGallery.Controls;
+using AppleGallery.Models;
 
 namespace AppleGallery
 {
@@ -11,6 +12,7 @@ namespace AppleGallery
     {
         private UITableView tableView;
 
+        
         private TableSource tableSource;
 
         private ImageHandler imageHandler;

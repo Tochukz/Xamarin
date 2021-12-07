@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using AppleGallery.Models;
 
-namespace AppleGallery.Handlers
+namespace AppleGallery.Controls
 {
     public class ImageHandler
     {
+        
         public event EventHandler AssetsLoaded;
 
         public ImageHandler()
