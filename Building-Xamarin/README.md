@@ -63,7 +63,117 @@ __MS Docs:__
 [Behaviors](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/)  
 
 [Views](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/controls/views)  
-__Working With Icons__  
+
+#### Working With Icons
+__To Use FontAwesome in Xamarin Forms__  
+1. __Get the fonts__
+  * Go to [fontawesome.com](https://fontawesome.com/)
+  * Click on the _Start_ Menu  
+  * Scroll down to where it says: __Desktop__ _Install locally and use in desktop app_, click on it
+  * On the next page click on the _Download Font Awesome Free for Desktop_ link
+  * Unzip the downloaded file and you should find `.otf` files in the `otf` directory.
+  * You may rename the files to simpler names and make sure to remove spaces from the names
+2. __Add otf files to your Projects__  
+  * Copy your `.otf` files to the `Assets` directory of your Android project. The __Build Action__ property for the files should be set to _AndriodAsset_
+  * Copy your `.otf` files to the `Resources` directory of your iOS project. The __Build Action__ property for the files should be set to _BundleResource_
+  * Copy your `.otf` files to the `Assets` folder of your `UWP` project. The __Build Action__ property for the files should be set to _Content_.   
+3. __Update the Info.plist file for iOS Project__  
+  * Write Click on the `Info.plist` file of your iOS project and click on  _Open with_
+  * On the popup dialog select the _XML (Text) Editor_ option
+  * Append the following to the `dict` element
+  ```
+  <key>UIAppFonts</key>
+  <array>
+    <string>FontAwesome5BrandsRegular.otf</string>
+    <string>FontAwesome5Regular.otf</string>
+    <string>FontAwesome5Solid.otf</string>
+  </array>
+  ```
+
+  * Make sure the text node in the string element marches the names of your `.otf` files
+  * Save the `Info.plist` file and close it.  
+4. __Create App Resources__   
+  * Create three resources in your `App.xaml` file to make the fonts available everywhere in your app
+  ```
+  <Application.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:TypeArguments="x:String"
+                  x:Key="FontAwesomeBrands">
+        <On Platform="Android"
+            Value="FontAwesome5Brands.otf#Regular" />
+        <On Platform="iOS"
+            Value="FontAwesome5Brands-Regular" />
+        <On Platform="UWP"
+            Value="/Assets/FontAwesome5Brands.otf#Font Awesome 5 Brands" />
+      </OnPlatform>
+
+      <OnPlatform x:TypeArguments="x:String"
+                  x:Key="FontAwesomeSolid">
+        <On Platform="Android"
+            Value="FontAwesome5Solid.otf#Regular" />
+        <On Platform="iOS"
+            Value="FontAwesome5Free-Solid" />
+        <On Platform="UWP"
+            Value="/Assets/FontAwesome5Solid.otf#Font Awesome 5 Free" />
+      </OnPlatform>
+
+      <OnPlatform x:TypeArguments="x:String"
+                  x:Key="FontAwesomeRegular">
+        <On Platform="Android"
+            Value="FontAwesome5Regular.otf#Regular" />
+        <On Platform="iOS"
+            Value="FontAwesome5Free-Regular" />
+        <On Platform="UWP"
+            Value="/Assets/FontAwesome5Regular.otf#Font Awesome 5 Free" />
+      </OnPlatform>
+    </ResourceDictionary>
+  </Application.Resources>
+
+  ```
+
+5. __Get an Icon Code__   
+     * Go to [fontawsome gallery](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free)
+     * Select free icons and either _Solid_, _Regular_ or _Brands_ from the navigation to filter
+     * Click on an icon to go to it's  details page
+     * Copy its Unicode e.g `f26e`
+
+6. __Use the Icon Code__  
+    * In your View you can use the Icon code as follows
+    ```
+    <Label Text="&#xf26e;"
+        FontFamily="{StaticResource FontAwesomeBrands}" />
+    ```
+    * Take note of the additional characters added to the Unicode to serve as escape code.
+    * Also the `FontAwesomeBrands` is used because the icon in our case is of the _Brands_ group.  
+
+7. __Name your Icon Codes__  
+  When we look at the Icon Code in the `Text` attribute value you may not be able to tell what icon it is. To solve this problem we can name out icon Unicode accordingly
+  * Create a Class file
+  ```
+    using System;
+
+    namespace FontAwesome
+    {
+        public static partial class FontAwesomeIcons
+        {
+
+            public const string FiveHundredPX = "\uf26e";
+
+            public const string Abacus = "\uf640";
+        }
+    }
+  ```
+  * Add the namespace to your page
+  ```
+    xmlns:fontawesome="clr-namespace:FontAwesome"
+  ```
+  * Use your Unicode icon name instead of the raw escaped Unicode
+  ```
+  <Label Text="{x:Static fontawesome:FontAwesomeIcons.FiveHundredPX}"
+     FontFamily="{StaticResource FontAwesomeBrands}" />
+  ```
+
+__Learn More__  
 [Use FontAwesome in Xamarin Form](https://medium.com/@tsjdevapps/use-fontawesome-in-a-xamarin-forms-app-2edf25311db4)  
 [Fonts](https://fontawesome.com/icons?d=gallery&s=brands,regular,solid&m=free)  
 
