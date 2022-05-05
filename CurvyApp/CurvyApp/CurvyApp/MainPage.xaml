@@ -8,13 +8,13 @@
             <!--<Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                 <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>-->
-  
+
             <StackLayout Padding="5">
                 <Frame Padding="0" Margin="20" CornerRadius="20" BackgroundColor="DarkBlue" IsClippedToBounds="True">
                     <Image Source="school2.jpg" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
             </StackLayout>
-        
+
             <StackLayout Padding="5" BackgroundColor="Teal">
                 <Frame Padding="0" CornerRadius="100" WidthRequest="200" HorizontalOptions="Center"  IsClippedToBounds="True" BackgroundColor="White">
                     <Image Source="chucks.png" HorizontalOptions="Center" VerticalOptions="Center" />

@@ -128,8 +128,22 @@ __To Use FontAwesome in Xamarin Forms__
       </OnPlatform>
     </ResourceDictionary>
   </Application.Resources>
+  ```  
+* The value of the Value attribute for iOS in  
 
-  ```
+ ```
+ <On Platform="iOS"
+     Value="FontAwesome5Brands-Regular" />
+ ```
+
+ S=should be the post script name of the Font File not the normal file name.  
+
+ __To Get the Postscript name (on MacOS)__    
+ * Right click on the `.otf` file > open with > Font book
+ * Click Install font
+ * On the Font Book window, click on the font name to drop down
+ * Select the font subname
+ * On the right hand side Copy the PostScript name from the font info.
 
 5. __Get an Icon Code__   
      * Go to [fontawsome gallery](https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free)
@@ -169,12 +183,12 @@ __To Use FontAwesome in Xamarin Forms__
   ```
   * Use your Unicode icon name instead of the raw escaped Unicode
   ```
-  <Label Text="{x:Static fontawesome:FontAwesomeIcons.FiveHundredPX}"
-     FontFamily="{StaticResource FontAwesomeBrands}" />
+  <Label Text="{x:Static fontawesome:FontAwesomeIcons.FiveHundredPX}" FontFamily="{StaticResource FontAwesomeBrands}" />
   ```
 
 __Learn More__  
 [Use FontAwesome in Xamarin Form](https://medium.com/@tsjdevapps/use-fontawesome-in-a-xamarin-forms-app-2edf25311db4)  
+[FontAwesome in Xamarin Forms. Everything you need to know!!](https://medium.com/xamarinlife/fontawesome-in-xamarin-forms-everything-you-need-to-know-b187af338e30)
 [Fonts](https://fontawesome.com/icons?d=gallery&s=brands,regular,solid&m=free)  
 
 ## Chapter 6: Making Scrollable List
@@ -248,7 +262,8 @@ Attached properties can also be used to attach commands, behaviors, triggers, an
 __Native Views__  
 Using native views requires knowledge of the platform-specific APIs, Xamarin.iOS and Xamarin.Andrios.  
 
-__MS Docs:__ [Custom Renderer](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/)  
+__MS Docs:__  
+[Custom Renderer](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/)  
 [Renders Base Clases](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/renderers)  
 
 ## Chapter 9: Data Access with SQLite and Data Binding  
@@ -294,7 +309,7 @@ __MS Docs__
 
 ### Working with a REST API  
 Install the _NewtonSoft JSON.NET_ Nuget package.  
-__MS Docs__
+__MS Docs__  
 [Consume a RESTful Web Service](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/web-services/rest)
 
 
@@ -304,3 +319,55 @@ __MS Docs__
 
 ### Local Notification
 [Xamarin Docs](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/local-notifications)
+
+### Custom Template with Content View
+[Creating page templates for Xamarin Forms](https://medium.com/@HoussemDellai/creating-page-templates-for-xamarin-forms-ec8cbc336d25)
+
+### Build for Release  
+__Prepare for Release__  
+1. Android Manifest Setup
+Right Click Android Project > Properties > Android Manifest  
+_Application icon:_ @minimap/icon   
+Replace all `icon.png` and `laucnher_foreground.png` images with your own.  
+_Version number_: 1
+ Increase the Version number by 1 for every build. Version number is used internally by Android.  
+In manifest xml file: `android:versionCode.`
+_Version name_ 0.0.1
+You can be shared the Version name with the user.  Version name is not used internal  
+In Manifest xml file: `android:versionName`
+Click Save
+
+2. Android Options  
+_Code Shrinker_: r8
+_Disable Debugger_:
+
+In the Manifest file `android:debuggable`: `false` or in `AssemblyInfo.cs`
+```
+
+```
+
+Click Save
+3. Publishing
+Right click Android Project > Archive  
+After the Archive is complete click on Distribute.
+Select `Ad Hoc` for side loading or `Google Play` for Google play store distribution  
+Sign the apk by clicking on the green plus icon to add a signature for the App
+Fill in the `Create Android Keystore` form with the relevant information and click on _Create_ button
+Click on your newly created Signature and click on the _Save as_ button to save the APK
+Enter an name for you APK file and click the _Save_ button.  
+You will be prompted to enter the password you entered when you were filling the Signing form
+Click on the `Open Distribution` button to see the APK that was saved
+
+__MS Docs__  
+[Preparing an Application for Release](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/release-prep/?tabs=windows)
+
+### Publish TO Google Play Store
+1. Create a Google Play developer account at [https://play.google.com/console/u/0/signup](https://play.google.com/console/u/0/signup)
+2. Add a Marchant Account if you went to sell paid apps or in-app purchases
+3. Prepare End User License Agreement (EULA) and Privacy Policy document  
+
+
+__Useful Links__ 
+[A Step-by-Step Guide](https://orangesoft.co/blog/how-to-publish-an-android-app-on-google-play-store)
+[Terms of Service](https://play.google.com/about/console/terms-of-service/)
+[Developer Distribution Agreement](https://play.google.com/about/developer-distribution-agreement.html)
